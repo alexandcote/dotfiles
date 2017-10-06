@@ -1,0 +1,34 @@
+# zplug
+# --------------------------------------
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
+zplug "paulirish/git-open", depth:1, as:plugin
+zplug "zsh-users/zsh-completions", depth:1, as:plugin
+zplug load
+
+# Configuration
+# --------------------------------------
+echo -n '.'
+source $HOME/.zsh/config/options.zsh
+
+echo -n '.'
+source $HOME/.zsh/config/completion.zsh
+
+echo -n '.'
+source $HOME/.zsh/config/variables.zsh
+
+echo -n '.'
+source $HOME/.zsh/config/aliases.zsh
+
+echo -n '.'
+source $HOME/.zsh/config/bindings.zsh
+
+echo -n '.'
+source $HOME/.zsh/config/syntax-highlighting.zsh
+
+clear
