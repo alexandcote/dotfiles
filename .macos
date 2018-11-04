@@ -23,6 +23,9 @@ sudo nvram SystemAudioVolume=" "
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
+# Set Dark theme
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
 # Set sidebar icon size to small
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
@@ -138,6 +141,9 @@ chflags nohidden ~/Library
 
 # Set the icon size of Dock items to 25 pixels
 defaults write com.apple.dock tilesize -int 26
+
+# Desactivate show-recent
+defaults write com.apple.dock show-recents -bool false
 
 # Set the zoom icon size of Dock items to 32 pixels
 defaults write com.apple.dock largesize -int 32
