@@ -34,18 +34,26 @@ source $HOME/.zsh/config/syntax-highlighting.zsh
 # ASDF version manager
 # --------------------------------------
 echo -n '.'
-source $HOME/.asdf/asdf.sh
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
 
 # Pyenv version manager
 # --------------------------------------
-echo -n '.'
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-if command -v pyenv 1>/dev/null 2>&1; then
+if which pyenv > /dev/null; then
+    echo -n '.'
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+# Work stuff
+# --------------------------------------
+if $IS_WORK_COMPUTER; then
+    echo -n '.'
+    source $HOME/.zsh/config/work.zsh
+    source /opt/dev/dev.sh
+fi
+
 
 # Clear all the dots we just printed
 clear

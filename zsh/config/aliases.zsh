@@ -17,3 +17,6 @@ alias t=tmux
 # Editor (always forward to Neovim!)
 alias vi='nvim'
 alias vim='nvim'
+
+# Edit dotfile
+alias dotedit='${EDITOR} ~/.dotfiles'

@@ -1,2 +1,26 @@
-syntax on
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+Plug '/usr/local/opt/fzf'
+
+call plug#end()
+
+" Don't try to be vi compatible
+set nocompatible
+
+" TODO: Pick a leader key
+let mapleader = ","
+
+" Security
+set modelines=0
+
+" Show line numbers
 set number
+
+" Blink cursor on error instead of beeping (grr)
+set visualbell
+
+" Encoding
+set encoding=utf-8
+

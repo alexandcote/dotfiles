@@ -1,5 +1,5 @@
 brew "coreutils"
-brew "wget", args: ["enable-iri"]
+brew "wget"
 brew "git"
 brew "tree"
 brew "neovim"
@@ -15,3 +15,4 @@ brew "node"
 brew "git-lfs"
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "reattach-to-user-namespace"

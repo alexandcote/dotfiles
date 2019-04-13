@@ -5,6 +5,9 @@
     email = a.cote@2kloc.com
     signingkey = 0BF7EB13314D09C9
 
+[includeIf "gitdir:Shopify/**"]
+    path = ~/.gitconfig.work
+
 [color]
     diff = auto
     status = auto
@@ -34,6 +37,7 @@
     verbosity = 5
     tool = tig
     compactionHeuristic = true
+    algorithm = patience
 
 [branch]
     autosetupmerge = true
@@ -55,6 +59,9 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+
+[protocol]
+    version = 2
 
 [alias]
     # Add some aliases
@@ -80,4 +87,4 @@
     unstage = reset HEAD
     track = push -u origin HEAD
     rollback = reset --soft HEAD^1
-	la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+    la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
