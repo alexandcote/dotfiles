@@ -9,7 +9,6 @@ export PATH="/usr/local/bin:$PATH"
 # Terminal config
 export DISPLAY
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
-export TERM="xterm-256color"
 
 # Timezone
 export TZ="America/Montreal"
