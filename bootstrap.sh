@@ -32,6 +32,7 @@ ln -sf ~/.dotfiles/misc/inputrc ~/.inputrc
 
 # Alacritty
 mkdir -p ~/.config
+rm -rf ~/.config/alacritty
 ln -sfn ~/.dotfiles/alacritty/ ~/.config/alacritty
 
 # Irb
@@ -44,6 +45,7 @@ ln -sf ~/.dotfiles/iex/iex.exs ~/.iex.exs
 ln -sfn ~/.dotfiles/vim ~/.vim
 ln -sf ~/.vim/vimrc ~/.vimrc
 
+rm -rf ~/.config/nvim
 mkdir -p ~/.config/nvim
 ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
 ln -sfn ~/.dotfiles/vim/autoload ~/.config/nvim/autoload
