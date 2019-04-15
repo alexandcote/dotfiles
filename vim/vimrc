@@ -1,40 +1,21 @@
-" Specify a directory for plugins
+" Plugins management
+" -------------------
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'kristijanhusak/vim-hybrid-material'
 
 Plug 'junegunn/vim-easy-align'
+
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" Don't try to be vi compatible
-set nocompatible
 
-" Pick a leader key
-let mapleader = ","
-let g:mapleader = ","
+" Configuration files
+" -------------------
 
-" Security
-set modelines=0
+" Settings
+source $HOME/.vim/config/global-settings.vim
 
-" Show line numbers
-set number
-
-" Blink cursor on error instead of beeping (grr)
-set visualbell
-
-" Encoding
-set encoding=utf-8
-
-" Setup theme
-set background=dark
-colorscheme hybrid_material
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-let g:hybrid_transparent_background = 1
