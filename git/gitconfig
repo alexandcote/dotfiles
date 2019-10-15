@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 
 [user]
-    name = Alexandre Côté
+    name = Alexandre Côté
     email = a.cote@2kloc.com
     signingkey = 0BF7EB13314D09C9
 
@@ -19,6 +19,7 @@
     autocrlf = input
     excludesfile = /Users/alex/.gitignore_global
     trustctime = false
+	commitGraph = true
 
 [commit]
     gpgsign = true
@@ -72,13 +73,15 @@
     l = log --graph --oneline --decorate
     f = fetch --verbose --prune
     r = rebase
-    x = !gittower $(git rev-parse --show-toplevel)
+    x = !fork commit
     pr = pull -v --rebase --prune
     hu = reset --hard @{u}
     ru = rebase @{u}
     ri = rebase --interactive
+    rs = rebase --interactive --autosquash
     ci = commit -v
     cm = commit -v -m
+    cf = commit -v --fixup
     br = branch -vv
     df = diff
     cp = cherry-pick
@@ -88,3 +91,5 @@
     track = push -u origin HEAD
     rollback = reset --soft HEAD^1
     la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+[gc]
+	writeCommitGraph = true
