@@ -15,7 +15,6 @@ brew "node"
 brew "git-lfs"
 brew "pyenv"
 brew "pyenv-virtualenv"
-brew "reattach-to-user-namespace"
 
 cask_args appdir: "/Applications"
 tap "homebrew/cask"
