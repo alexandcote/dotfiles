@@ -91,5 +91,6 @@
     track = push -u origin HEAD
     rollback = reset --soft HEAD^1
     la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+
 [gc]
-	writeCommitGraph = true
+    writeCommitGraph = true
