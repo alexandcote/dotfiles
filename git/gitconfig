@@ -5,6 +5,9 @@
     email = a.cote@2kloc.com
     signingkey = 0BF7EB13314D09C9
 
+[credential]
+    helper = osxkeychain
+
 [includeIf "gitdir:Shopify/**"]
     path = ~/.gitconfig.work
 
@@ -19,7 +22,7 @@
     autocrlf = input
     excludesfile = /Users/alex/.gitignore_global
     trustctime = false
-	commitGraph = true
+    commitGraph = true
 
 [commit]
     gpgsign = true
@@ -49,11 +52,11 @@
 [log]
     date = local
 
+[gc]
+    writeCommitGraph = true
+
 [pull]
     rebase = true
-
-[credential]
-    helper = osxkeychain
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -91,6 +94,3 @@
     track = push -u origin HEAD
     rollback = reset --soft HEAD^1
     la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
-
-[gc]
-    writeCommitGraph = true

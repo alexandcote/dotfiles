@@ -15,10 +15,44 @@ brew "node"
 brew "git-lfs"
 brew "pyenv"
 brew "pyenv-virtualenv"
-brew "reattach-to-user-namespace"
+brew "rg"
+brew "mas"
 
 cask_args appdir: "/Applications"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 cask "alacritty"
 cask "google-chrome"
 cask "firefox"
+cask "qmk-toolbox"
+cask "visual-studio-code"
+cask "spotify"
+cask "slack"
+cask "iterm2"
+cask "bartender"
+cask "fantastical"
+cask "kaleidoscope"
+cask "alfred"
+cask "fork"
+cask "paw"
+cask "gitify"
+cask "flux"
+cask "gitfox"
+cask "sequel-pro"
+cask "karabiner-elements"
+cask "docker"
+cask "dash"
+cask "tuple"
+cask "discord"
+cask "ngrok"
+cask "rectangle"
+cask "transmission"
+
+mas "1Password 7", id: 1333542190
+mas "Bear", id: 1091189122
+mas "feedly", id: 865500966
+mas "Sequence Diagram", id: 1195426709
+mas "Spark", id: 1176895641
+mas "Twitter", id: 1482454543
+mas "Unsplash Wallpapers", id: 1284863847
+mas "Xcode", id: 497799835

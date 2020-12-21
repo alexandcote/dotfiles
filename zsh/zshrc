@@ -7,7 +7,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
-zplug "paulirish/git-open", depth:1, as:plugin
+zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-completions", depth:1, as:plugin
 zplug load
 
@@ -54,6 +54,8 @@ if $IS_WORK_COMPUTER; then
     source /opt/dev/dev.sh
 fi
 
+# Custom tool
+source /opt/d/d.sh
 
 # Clear all the dots we just printed
 clear

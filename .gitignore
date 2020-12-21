@@ -1,2 +1,3 @@
 gnupg/*
 !gnupg/gpg.conf
+iterm/com.googlecode.iterm2.plist

@@ -35,6 +35,13 @@ mkdir -p ~/.config
 rm -rf ~/.config/alacritty
 ln -sfn ~/.dotfiles/alacritty/ ~/.config/alacritty
 
+# iterm
+plutil -convert binary1 ~/.dotfiles/iterm/com.googlecode.iterm2.xml -o ~/.dotfiles/iterm/com.googlecode.iterm2.plist
+ln -sf ~/.dotfiles/iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Karabiner
+ln -sfn ~/.dotfiles/karabiner ~/.config/karabiner
+
 # Irb
 ln -sf ~/.dotfiles/irc/irbrc ~/.irbrc
 
