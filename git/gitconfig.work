@@ -3,6 +3,10 @@
     email = alex.cote@shopify.com
     signingkey = 0BF7EB13314D09C9
 
+[credential]
+    helper = 
+    helper = store --file /opt/dev/var/private/git_credential_store
+
 [url "https://github.com/Shopify/"]
     insteadOf = git@github.com:Shopify/
     insteadOf = git@github.com:shopify/
