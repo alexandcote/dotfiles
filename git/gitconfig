@@ -24,6 +24,9 @@
     trustctime = false
     commitGraph = true
 
+[gpg]
+    program = gpg
+
 [commit]
     gpgsign = true
 

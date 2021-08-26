@@ -14,6 +14,7 @@ brew bundle
 # ZSH
 ln -sfn ~/.dotfiles/zsh ~/.zsh
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 
 chsh -s /bin/zsh
 zplug install

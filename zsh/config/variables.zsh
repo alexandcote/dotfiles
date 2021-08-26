@@ -8,6 +8,9 @@ export GOPATH=$HOME
 export DISPLAY
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
 
+# GPG
+export GPG_TTY=`tty`
+
 # Timezone
 export TZ="America/Montreal"
 
