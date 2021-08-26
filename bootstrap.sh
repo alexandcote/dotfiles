@@ -27,6 +27,7 @@ ln -sf ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 # Tmux
 ln -sfn ~/.dotfiles/tmux ~/.tmux
 ln -sf ~/.tmux/tmux.conf ~/.tmux.conf
+ln -sf ~/.tmux/tmux-inactive.conf ~/.tmux-inactive.conf
 
 # Misc
 ln -sf ~/.dotfiles/misc/inputrc ~/.inputrc
