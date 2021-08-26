@@ -1,11 +1,11 @@
 on run argv
     if (item 1 of argv is equal to "1") then
-        do shell script "/usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"input\" -s \"USB audio CODEC\" && /usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"output\" -s \"USB audio CODEC\""
+        do shell script "/usr/local/bin/SwitchAudioSource -t \"input\" -s \"USB audio CODEC\" && /usr/local/bin/SwitchAudioSource -t \"output\" -s \"USB audio CODEC\""
     else if (item 1 of argv is equal to "2") then
-        do shell script "/usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"input\" -s \"Bose - Alex\" && /usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"output\" -s \"Bose - Alex\""
+        do shell script "/usr/local/bin/SwitchAudioSource -t \"input\" -s \"Bose - Alex\" && /usr/local/bin/SwitchAudioSource -t \"output\" -s \"Bose - Alex\""
     else if (item 1 of argv is equal to "3") then
-        do shell script "/usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"input\" -s \"Alexandre’s AirPods\" && /usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"output\" -s \"Alexandre’s AirPods\""
+        do shell script "/usr/local/bin/SwitchAudioSource -t \"input\" -s \"Alexandre’s AirPods\" && /usr/local/bin/SwitchAudioSource -t \"output\" -s \"Alexandre’s AirPods\""
     else if (item 1 of argv is equal to "4") then
-        do shell script "/usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"input\" -s \"MacBook Pro Microphone\" && /usr/local/Cellar/switchaudio-osx/1.0.0/SwitchAudioSource -t \"output\" -s \"MacBook Pro Speakers\""
+        do shell script "/usr/local/bin/SwitchAudioSource -t \"input\" -s \"MacBook Pro Microphone\" && /usr/local/bin/SwitchAudioSource -t \"output\" -s \"MacBook Pro Speakers\""
     end if
 end run
