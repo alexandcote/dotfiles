@@ -20,6 +20,7 @@ brew "mas"
 brew "jq"
 brew "yarn"
 brew "switchaudio-osx"
+brew "http-server"
 
 cask_args appdir: "/Applications"
 tap "homebrew/cask"
