@@ -1,8 +1,23 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Set Session Name
 SESSION="dev"
 SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+
+create-window() {
+    # Create the window
+    tmux new-window -t $SESSION -n $1
+
+    # Calculate pane index position
+    let "pane = $(tmux list-panes -t $1 | head -n 1 | sed -n "s/.*%\([0-9]\).*$/\1/p") + 1"
+
+    # Move the first window in the project directory
+    # Display server logs and split the terminal
+    tmux send-keys -t $1 "cd ~/src/github.com/Shopify/$2" C-m 'clear' C-m
+    tmux send-keys -t $1 "journalctl -f -u proc-shopify--$2@server.service" C-m
+    tmux splitw -t $1 -h -p 50
+    tmux send-keys -t "$1.%$pane" "cd ~/src/github.com/Shopify/$2" C-m 'clear' C-m
+}
 
 # Only create tmux session if it doesn't already exist
 if [ "$SESSIONEXISTS" = "" ]
@@ -13,35 +28,12 @@ then
     # Start New Session with our name
     tmux new-session -d -s $SESSION
 
-    # Name first Window
-    tmux rename-window -t $SESSION 'Online-Store'
+    create-window 'Online-Store' 'online-store-web'
+    create-window 'Web' 'web'
+    create-window 'Shopify' 'shopify'
 
-    # Move the first window in the project directory
-    # Display server logs and split the terminal
-    tmux send-keys -t 'Online-Store' 'cd ~/src/github.com/Shopify/online-store-web' C-m 'clear' C-m
-    tmux send-keys -t 'Online-Store' "jc -f -u proc-shopify--online-store-web@server.service" C-m
-    tmux splitw -t 'Online-Store' -h -p 50
-    tmux send-keys -t 'Online-Store.%1' 'cd ~/src/github.com/Shopify/online-store-web' C-m 'clear' C-m
-
-    # Create the Web window
-    tmux new-window -t $SESSION -n 'Web'
-
-    # Move the first window in the project directory
-    # Display server logs and split the terminal
-    tmux send-keys -t 'Web' 'cd ~/src/github.com/Shopify/web' C-m 'clear' C-m
-    tmux send-keys -t 'Web' "jc -f -u proc-shopify--web@server.service" C-m
-    tmux splitw -t 'Web' -h -p 50
-    tmux send-keys -t 'Web.%3' 'cd ~/src/github.com/Shopify/web' C-m 'clear' C-m
-
-    # Create the Shopify window
-    tmux new-window -t $SESSION -n 'Shopify'
-
-    # Move the first window in the project directory
-    # Display server logs and split the terminal
-    tmux send-keys -t 'Shopify' 'cd ~/src/github.com/Shopify/shopify' C-m 'clear' C-m
-    tmux send-keys -t 'Shopify' "jc -f -u proc-shopify--shopify@server.service" C-m
-    tmux splitw -t 'Shopify' -h -p 50
-    tmux send-keys -t 'Shopify.%5' 'cd ~/src/github.com/Shopify/shopify' C-m 'clear' C-m
+    # Remove the first window that was created with the session
+    tmux kill-window -t 1
 
     # Select the Online-Store window and second pane
     tmux select-window -t 'Online-Store.%1'

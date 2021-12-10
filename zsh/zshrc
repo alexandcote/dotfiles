@@ -20,6 +20,9 @@ echo -n '.'
 source $HOME/.zsh/config/completion.zsh
 
 echo -n '.'
+source $HOME/.zsh/config/function.zsh
+
+echo -n '.'
 source $HOME/.zsh/config/variables.zsh
 
 echo -n '.'
