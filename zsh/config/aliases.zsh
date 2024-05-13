@@ -1,7 +1,7 @@
 # Local aliases
 # --------------------------------------
 alias zreload='source ~/.zshrc'
-alias ls="ls -lhFGA --color=always --group-directories-first"
+alias ls="ls -lhFGA --color=always"
 alias ll='ls -la'
 alias l='ls -l'
 alias rm='rm -i'

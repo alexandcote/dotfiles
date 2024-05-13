@@ -1,6 +1,8 @@
 # zplug
 # --------------------------------------
-export ZPLUG_HOME=/usr/local/opt/zplug
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-autosuggestions"
@@ -31,21 +33,6 @@ source $HOME/.zsh/config/bindings.zsh
 echo -n '.'
 source $HOME/.zsh/config/syntax-highlighting.zsh
 
-# ASDF version manager
-# --------------------------------------
-echo -n '.'
-[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
-
-# Pyenv version manager
-# --------------------------------------
-if which pyenv > /dev/null; then
-    echo -n '.'
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
 # Work stuff
 # --------------------------------------
 if $IS_WORK_COMPUTER; then
@@ -53,9 +40,6 @@ if $IS_WORK_COMPUTER; then
     source $HOME/.zsh/config/work.zsh
     source /opt/dev/dev.sh
 fi
-
-# Custom tool
-source /opt/d/d.sh
 
 # Clear all the dots we just printed
 clear

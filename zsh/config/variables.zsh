@@ -40,10 +40,10 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
 [ -f /opt/dev/dev.sh ] && export IS_WORK_COMPUTER=true || export IS_WORK_COMPUTER=false
 
 # Path
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.zsh/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"

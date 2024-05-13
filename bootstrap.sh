@@ -1,7 +1,7 @@
 #!/bin/sh 
 
-# Installing Brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Installing Dev
+eval "$(curl -sS https://up.dev)"
 
 cd ~
 
@@ -11,7 +11,6 @@ brew bundle
 # ZSH
 ln -sfn ~/.dotfiles/zsh ~/.zsh
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 
 chsh -s /bin/zsh
 zplug install
@@ -28,10 +27,6 @@ ln -sf ~/.tmux/tmux-inactive.conf ~/.tmux-inactive.conf
 
 # Misc
 ln -sf ~/.dotfiles/misc/inputrc ~/.inputrc
-
-# iterm
-plutil -convert binary1 ~/.dotfiles/iterm/com.googlecode.iterm2.xml -o ~/.dotfiles/iterm/com.googlecode.iterm2.plist
-ln -sf ~/.dotfiles/iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Karabiner
 ln -sfn ~/.dotfiles/karabiner ~/.config/karabiner

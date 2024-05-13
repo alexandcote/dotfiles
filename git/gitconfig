@@ -2,11 +2,11 @@
 
 [user]
     name = Alexandre Côté
-    email = a.cote@2kloc.com
+    email = alex.cote@shopify.com
     signingkey = 0BF7EB13314D09C9
 
-[credential]
-    helper = osxkeychain
+[init]
+    defaultBranch = main
 
 [color]
     diff = auto
@@ -17,9 +17,8 @@
 
 [core]
     autocrlf = input
-    excludesfile = /Users/alex/.gitignore_global
+    excludesfile = /Users/alexandcote/.gitignore_global
     trustctime = false
-    commitGraph = true
 
 [gpg]
     program = gpg
@@ -41,7 +40,6 @@
     verbosity = 5
     tool = tig
     compactionHeuristic = true
-    algorithm = patience
 
 [branch]
     autosetupmerge = true
@@ -51,10 +49,6 @@
 
 [log]
     date = local
-
-[gc]
-    writeCommitGraph = true
-
 [pull]
     rebase = true
 
@@ -63,10 +57,6 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
-
-[protocol]
-    version = 2
-
 [alias]
     # Add some aliases
     a = add -A
@@ -95,3 +85,5 @@
     rollback = reset --soft HEAD^1
     sw = !git switch $(git branch --sort=-creatordate | fzf | tr -d '^\\*|[:space:]')
     la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+[include]
+	path = /Users/alexandcote/.config/dev/gitconfig
