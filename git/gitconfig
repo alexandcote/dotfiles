@@ -8,9 +8,6 @@
 [credential]
     helper = osxkeychain
 
-[includeIf "gitdir:Shopify/**"]
-    path = ~/.gitconfig.work
-
 [color]
     diff = auto
     status = auto
